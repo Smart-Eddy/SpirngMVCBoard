@@ -24,4 +24,7 @@ public interface BoardMapper {
 	
 	//게시물수정
 	public int update(BoardVO board);
+	
+	//조회수
+	public void count(int bno);
 }

@@ -6,7 +6,7 @@
 	
 	<!--  게시글 조회 -->
 	<select id="getList" resultType="boardVO">
-		select * from tb_board;
+		select * from tb_board order by idx desc
 	</select>
 	
 	<!--  게시글 작성 -->
@@ -27,8 +27,13 @@
 	
 	<!-- 게시글 수정 -->
 	<update id="update" parameterType="boardVO">
-		update tb_board set title = #{title}, contents = #{title}
+		update tb_board set title = #{title}, contents = #{contents}
 		where idx = #{idx}
+	</update>
+	
+	<!-- 조회수 -->
+	<update id="count" parameterType="Integer">
+		update tb_board set count = count+1 where idx=#{idx}
 	</update>
 
 </mapper>

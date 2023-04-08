@@ -13,7 +13,7 @@ public interface BoardService {
 		public void register(BoardVO board);
 		
 		//게시글 상세보기
-		public BoardVO get(int bno);
+		public BoardVO get(int bno, String mode);
 		
 		//게시물삭제
 		public int remove(int bno);
